@@ -1,0 +1,25 @@
+.main {
+    margin: auto;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: space-around;
+}
+
+.main__headerH1 {
+    margin: 16px 0px;
+    font-weight: 700;
+}
+
+.main__headerH2 {
+    margin: 2px 0px;
+    padding: 10px 30px;
+    background-color: white;
+}
+
+.main__paragraph {
+    background-color: white;
+    border-bottom: lightslategrey;
+    border-style: 1px solid;
+}
