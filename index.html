@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="js/script.js"></script>
+    <script defer src="script/script.js"></script>
     <link href="style/style.css" rel="stylesheet" />
     <link href="style/form.css" rel="stylesheet" />
     <link href="style/main.css" rel="stylesheet" />
@@ -22,8 +22,9 @@
             <h1 class="main__headerH1">Lista zadań</h1>
             <h2 class="main__headerH2">Dodaj nowe zadanie</h2>
 
-            <form class="form"> <input class="form__inputField" name="form__taskInput"> <button class="form__button"> Dodaj zadanie</button> </form>
+            <form class="form js-form"> <input class="form__inputField js-newTask" name="form__taskInput"> <button class="form__button"> Dodaj zadanie</button> </form>
             <h2 class="main__headerH2">Lista zadań</h2>
+            <ul class="main__tasksList js-tasksList"></ul>
         </div>
     </main>
 
