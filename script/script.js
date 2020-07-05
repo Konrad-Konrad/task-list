@@ -16,12 +16,22 @@
         for (const task of tasksList) {
             htmlString += `
             <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
+            <button class="js-deleteTask">delete</button>
             ${task.content}
             </li>
              `;
         }
         document.querySelector(".js-tasksList").innerHTML = htmlString;
-    };
+
+        const deleteButtons = document.querySelectorAll(".js-deleteTask");
+
+        deleteButtons.forEach((deleteButton, index) => {
+        deleteButton.addEventListener("click", () => {
+            tasksList.splice(index, 1);
+            renderList();
+        });
+    });
+};
 
     const addNewTask = (newTaskContent) => {
         tasksList.push({
@@ -49,7 +59,7 @@
         renderList();
         const form = document.querySelector(".js-form");
 
-        form.addEventListener("sumbit", onFormSubmit);
+        form.addEventListener("submit", onFormSubmit);
 
     };
 
