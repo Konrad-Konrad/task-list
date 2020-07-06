@@ -27,8 +27,8 @@
         tasksList[index].done = !tasksList[index].done;
         renderList();
     }
-bindEvents = () => {
-    const deleteButtons = document.querySelectorAll(".js-deleteTask");
+    bindEvents = () => {
+        const deleteButtons = document.querySelectorAll(".js-deleteTask");
 
         deleteButtons.forEach((deleteButton, index) => {
             deleteButton.addEventListener("click", () => {
@@ -43,16 +43,17 @@ bindEvents = () => {
                 toggleTaskCompleted(index);
             });
         });
-}
+    }
     const renderList = () => {
         let htmlString = "";
 
         for (const task of tasksList) {
             htmlString += `
-            <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
-            <button class="js-completed">completed</button>
-            <button class="js-deleteTask">delete</button>
-            ${task.content}
+            <li class="task__item">
+            <button class="task__button task__button--toggleCompleted js-completed" >${task.done ? "✔" : ""}</button>
+        
+            <span class="task__content ${task.done ? "task__content--completed" : ""}"> ${task.content} </span>
+            <button class="task__button task__button--delete js-deleteTask">🗑️</button>
             </li>
              `;
         }
@@ -64,13 +65,15 @@ bindEvents = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
-
-        if (newTaskContent === "") {
-            return;
+        const newTaskElement = document.querySelector(".js-newTask")
+        const newTaskContent = newTaskElement.value.trim();
+      
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
         }
-
-        addNewTask(newTaskContent);
+        newTaskElement.focus();
+    
     };
 
     const init = () => {
