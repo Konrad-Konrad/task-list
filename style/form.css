@@ -13,6 +13,20 @@
     color: white;
     border: none;
 }
+.form__button:hover {
+    padding: 5px 10px;
+    margin: 10px 10px;
+    background-color: hsl(180, 100%, 30%);
+    color: white;
+    border: none;
+}
+.form__button:active {
+    padding: 5px 10px;
+    margin: 10px 10px;
+    background-color: hsl(180, 100%, 35%);
+    color: white;
+    border: none;
+}
 
 .form__inputField {
     flex-grow: 1;
