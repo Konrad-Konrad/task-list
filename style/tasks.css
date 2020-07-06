@@ -1,0 +1,52 @@
+.tasks {
+    list-style: none;
+    background-color: white;
+    padding: 20px;
+    margin: 1px;
+}
+
+.task__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    grid-gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task__button {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    align-content: center;
+    justify-content: center;
+    border-style: none;
+}
+
+.task__button--toggleCompleted {
+    background-color: green;
+}
+
+.task__button--toggleCompleted:hover {
+    background-color: hsl(120, 100%, 35%);
+}
+
+.task__button--toggleCompleted:active {
+    background-color: hsl(120, 100%, 45%);
+}
+
+.task__button--delete {
+    background-color: red;
+}
+
+.task__button--delete:hover {
+    background-color: rgb(255, 0, 25%);
+}
+
+.task__button--delete:active {
+    background-color: rgb(255, 0, 35%);
+}
+
+.task__content--completed {
+    text-decoration-line: line-through;
+}
