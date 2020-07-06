@@ -28,8 +28,7 @@
 
         deleteButtons.forEach((deleteButton, index) => {
         deleteButton.addEventListener("click", () => {
-            tasksList.splice(index, 1);
-            renderList();
+            deleteTask(index);
         });
     });
 };
@@ -57,6 +56,11 @@ const toggleTaskCompleted = (index) => {
         renderList();
 
     };
+    
+    deleteTask = (index) => {
+        tasksList.splice(index, 1);
+            renderList();
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
