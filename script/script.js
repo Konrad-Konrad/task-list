@@ -9,7 +9,41 @@
             done: false,
         },
     ];
+    const addNewTask = (newTaskContent) => {
+        tasksList.push({
+            content: newTaskContent,
+        });
 
+        renderList();
+
+    };
+
+    const deleteTask = (index) => {
+        tasksList.splice(index, 1);
+        renderList();
+    };
+
+    const toggleTaskCompleted = (index) => {
+        tasksList[index].done = !tasksList[index].done;
+        renderList();
+    }
+bindEvents = () => {
+    const deleteButtons = document.querySelectorAll(".js-deleteTask");
+
+        deleteButtons.forEach((deleteButton, index) => {
+            deleteButton.addEventListener("click", () => {
+                deleteTask(index);
+            });
+        });
+
+        const completedButtons = document.querySelectorAll(".js-completed");
+
+        completedButtons.forEach((toggleCompletedButton, index) => {
+            toggleCompletedButton.addEventListener("click", () => {
+                toggleTaskCompleted(index);
+            });
+        });
+}
     const renderList = () => {
         let htmlString = "";
 
@@ -23,44 +57,9 @@
              `;
         }
         document.querySelector(".js-tasksList").innerHTML = htmlString;
-   
-        const deleteButtons = document.querySelectorAll(".js-deleteTask");
 
-        deleteButtons.forEach((deleteButton, index) => {
-        deleteButton.addEventListener("click", () => {
-            deleteTask(index);
-        });
-    });
-};
-
-
-const completedButtons = document.querySelectorAll(".js-completed");
-
-completedButtons.forEach((toggleCompletedButton, index) => {
-    toggleCompletedButton.addEventListener("click", () => {
-    toggleTaskCompleted(index);
-});
-});
-
-const toggleTaskCompleted = (index) => {
-    tasksList[index].done = !tasksList[index].done;
-    renderList();
-};
-
-
-    const addNewTask = (newTaskContent) => {
-        tasksList.push({
-            content: newTaskContent,
-        });
-
-        renderList();
-
+        bindEvents();
     };
-    
-    deleteTask = (index) => {
-        tasksList.splice(index, 1);
-            renderList();
-    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
