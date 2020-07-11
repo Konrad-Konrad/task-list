@@ -17,8 +17,7 @@
 .task__button {
     height: 30px;
     width: 30px;
-    background-color: transparent;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     border-style: none;
 }
