@@ -13,6 +13,9 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
+.task__item--hidden {
+    display:none;
+}
 
 .task__button {
     height: 30px;
