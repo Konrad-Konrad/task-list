@@ -18,7 +18,7 @@
         ];
         renderList();
     };
-}
+    
 const toggleTaskCompleted = (taskIndex) => {
     tasksList = [
         ...tasksList.slice(0, taskIndex),
@@ -45,12 +45,12 @@ const markAllTasksDone = () => {
     }));
     renderList();
 };
-const toggleHideDoneTasks = () => {
+const toggleHideTasks = () => {
     hideDoneTasks = !hideDoneTasks;
     renderList();
 };
 
-bindEvents = () => {
+bindDeleteEvents = () => {
     const deleteButtons = document.querySelectorAll(".js-deleteTask");
 
     deleteButtons.forEach((deleteButton, taskIndex) => {
@@ -67,7 +67,7 @@ bindEvents = () => {
         });
     });
 }
-const renderList = () => {
+const renderTasks = () => {
     const taskToHTML = task => ` 
        <li class="
        task__item${task.done && hideDoneTasks ? " task__item--hidden" : ""} js-tasksList
@@ -118,12 +118,11 @@ const bindsButtonsEvents = () => {
 
 const renderList = () => {
     renderTasks();
-    bindRemoveEvents();
+    bindDeleteEvents();
     bindToggleCompletedEvents();
     renderButtons();
-    bindButtonsEvents();
-};
-
+    bindsButtonsEvents()
+}
 const onFormSubmit = (event) => {
     event.preventDefault();
 
