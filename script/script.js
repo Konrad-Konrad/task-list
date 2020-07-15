@@ -9,7 +9,7 @@
             done: false,
         },
     ];
-    let hideDoneTasks = false;
+    let  HideCompletedTasks = false;
 
     const deleteTask = (taskIndex) => {
         tasksList = [
@@ -45,8 +45,8 @@ const markAllTasksDone = () => {
     }));
     renderList();
 };
-const toggleHideTasks = () => {
-    hideDoneTasks = !hideDoneTasks;
+const toggleHideCompletedTasks = () => {
+     HideCompletedTasks = ! HideCompletedTasks;
     renderList();
 };
 
@@ -70,7 +70,7 @@ bindDeleteEvents = () => {
 const renderTasks = () => {
     const taskToHTML = task => ` 
        <li class="
-       task__item${task.done && hideDoneTasks ? " task__item--hidden" : ""} js-tasksList
+       task__item${task.done &&  HideCompletedTasks ? " task__item--hidden" : ""} js-tasksList
        ">
             <button class="task__button task__button--toggleCompleted js-completed" >${task.done ? "✔" : ""}</button>
             <span class="task__content ${task.done ? "task__content--completed" : ""}"> ${task.content} </span>
@@ -95,7 +95,7 @@ ${HideCompletedTasks ? "Pokaż" : "Ukryj"} ukończone
 </button>
 
 <button class="main__HideAllTasks js-markAllCompleted"
-${tasks.every(({ done }) => done) ? "disabled" : ""}
+${tasksList.every(({ done }) => done) ? "disabled" : ""}
 > 
 Ukończ wszystkie
 </button>
@@ -108,7 +108,7 @@ const bindsButtonsEvents = () => {
     if (markAllCompletedButton) {
         markAllCompletedButton.addEventListener("click", markAllTasksDone);
     }
-    const toggleHideCompletedTasksButton = document.querySelector("js-toggleHideCompletedTasks");
+    const toggleHideCompletedTasksButton = document.querySelector(".js-toggleHideCompletedTasks");
 
     if (toggleHideCompletedTasksButton) {
         toggleHideCompletedTasksButton.addEventListener("click", toggleHideCompletedTasks);
@@ -119,7 +119,6 @@ const bindsButtonsEvents = () => {
 const renderList = () => {
     renderTasks();
     bindDeleteEvents();
-    bindToggleCompletedEvents();
     renderButtons();
     bindsButtonsEvents()
 }
