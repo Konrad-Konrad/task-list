@@ -54,3 +54,6 @@
     background-color: white;
     color: teal;
 }
+.main__HideAllTasks:disabled {
+    color: grey;
+}
