@@ -26,23 +26,27 @@
 }
 
 .task__button--toggleCompleted {
-    background-color: green;
+    background-color: hsl(120, 100%, 25%);
 }
 
 .task__button--toggleCompleted:hover {
-    background-color: hsl(120, 100%, 35%);
+    background-color: hsl(120, 100%, 32%);
+    transform: scale(1.05);
+    transition: 1s;
 }
 
 .task__button--toggleCompleted:active {
-    background-color: hsl(120, 100%, 45%);
+    background-color: hsl(120, 100%, 39%);
 }
 
 .task__button--delete {
-    background-color: red;
+    background-color: hsl(0, 100%, 50%);
 }
 
 .task__button--delete:hover {
     background-color: rgb(255, 0, 25%);
+    transform: scale(1.05);
+}
 }
 
 .task__button--delete:active {
