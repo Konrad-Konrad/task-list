@@ -15,29 +15,40 @@
 .main__headerH2 {
     margin: 2px 0px;
     padding: 10px 30px;
-    flex-grow: 1;
-}
-
-@media (max-width: 688px) {
-    .main__headerH2 {
-        flex-basis: 100%;
-    }
-    .main__toogleTasksButtons {
-        flex-basis: 100%;
-    }
 }
 
 .main__paragraph {
     background-color: white;
     border-bottom: lightslategrey;
     border-style: 1px solid;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+@media (max-width: 688px) {
+    .main__paragraph {
+        grid-template-columns: 1fr;
+}.main__HideAllCompletedTask {
+    flex-basis: 100%;
+}
+
 }
 
 .main__toogleTasksButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main__HideAllCompletedTask {
+    padding: 10px;
+    border-style: none;
+    background-color: white;
+    color: teal;
+}
+
+.main__HideAllTasks {
     padding: 10px;
     border-style: none;
     background-color: white;
