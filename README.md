@@ -1,5 +1,5 @@
 # About
-YouCode homework week 6 was a tasks list page Java Script coding.
+YouCode homework week 6 was a tasks list page with Java Script.
 # Main features
 * The project is reproduced on the basis of the graphic design
 * Tamplate uses flex CSS Flex Box and CSS Grid layout
