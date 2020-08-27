@@ -13,7 +13,7 @@ Week 6 homework YouCode course.
 - mark sigle tast completed
 - delete task possibility
 - hide/show completed task button
-- complete all task button
+- complete all tasks button
 
 ![image](https://github.com/Konrad-Konrad/task-list/blob/master/images/to-do-list-presentation.gif?)
 
