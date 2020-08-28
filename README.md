@@ -2,7 +2,7 @@
 Week 6 homework YouCode course.
 
 # Technologies applied
-- JavaScript with Immutability
+- JavaScript code with immutability and template strings
 - CSS Flex Box
 - CSS Grid 
 - media queries @ max-width: 688px
